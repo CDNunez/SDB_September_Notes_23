@@ -1,0 +1,22 @@
+.flex-sample {
+    /* edit display property to change "flex" --- by default flex displays elements in a row(next to each otehr)*/
+    display: flex;
+    flex-direction: column;
+    /* flex direction controls where info is displayed for readability (left - right, top - bottom) */
+    align-items: center;
+}
+
+.card {
+    background-color: rgb(79, 203, 203);
+    border-radius: 5px;
+    padding: 7px;
+    width: 30%;
+}
+
+#flex-container {
+    /* by default it has a direction of row */
+    display: flex;
+    /* flex wrap = multi_line flex container which wraps any content that past the flex container to a new line */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,104 @@
+/* This is a comment */
+/* 'ctrl + /' also makes a comment */
+
+/* 
+multi
+line
+comment
+*/
+
+/* class selector for paragraph tags */
+
+/* List of CCS Selectors
+    -Element Selector: will select all instances of given tag from an HTML page
+    Eaxmples:
+        -body
+        -p
+
+*/
+/* using commas selects multiple elements */
+p, h1 {
+    color:aqua;
+}
+
+body {
+    background-color: dimgray;
+}
+
+/* 
+In CSS we can use 3 methods to refer to color
+color keywords: 
+    white,dimgray, black etc
+RGB value: 
+    -rgb(0-255,0255)
+RGBA value
+hexadecimal
+    #FFF
+*/
+
+/* to select class elements add a "." before the class element
+    to select and id element add a "#" before the id element
+        id's can only be assigned to one element
+        classes can be applied to multiple elements
+*/
+
+.header {
+    text-align: center;
+}
+
+#unique {
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+/* specific container focus 
+
+nav .btn {
+    background-color: crimson;
+}
+
+/* ">" selector will only affect direct children of parent selector 
+nav > .btn {
+    color: white;
+}*/
+
+
+/* hierarchy - class/id still takes priority even if new rule is added afterwards 
+hierarchy order week to strong
+
+external
+-element
+-class
+-id
+-!important
+
+internal
+-element
+-class
+-id
+-!important
+
+a {
+    color:purple !important;
+}
+*/
+
+/* styles unvisited links */
+a:link {
+    color: #cccf;
+}
+
+/* styles visited links */
+a:visited {
+    color: red;
+}
+
+/* styles hover links */
+a:hover {
+    color:darkviolet;
+}
+
+/* styles links being clicked */
+a:active {
+    color: yellowgreen;
+}

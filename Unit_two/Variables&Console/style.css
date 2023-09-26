@@ -1,0 +1,35 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+body {
+    background-color: dimgray;
+}
+
+h1 {
+    font-size: 144px;
+    background-color: yellow;
+    color: black;
+    border-radius: 15px;
+    width: 100%;
+    margin-top: 10%;
+}
+
+.box {
+    background-color: magenta;
+    height: 50vw;
+    width: 85vw;
+    text-align: center;
+    margin-top: 5%;
+    border-radius: 15px;
+    border: solid 5px cyan;
+}
+
+@media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 44px;
+        margin-top: 5%;
+    }
+}
