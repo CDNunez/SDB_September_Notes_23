@@ -6,7 +6,7 @@
     -Block of code that performs a particular task.
     -simplified programs that run a task when invoked.
 
-    !Function Declaration Structure
+    ?Function Declaration Structure
     (1)        (2)
     function hi() {
         console.log("Hi");
@@ -17,13 +17,13 @@
         -parenthesis is for parameters
 */
 
-//Declarative Functions
+//?Declarative Functions
 function hi() {
     console.log('Hi!');
 }
 
 /* 
-*    Function Expression
+    ?Expression Function
     (1)
     let hey = function() {
         console.log('Hi!');

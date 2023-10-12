@@ -38,3 +38,15 @@ function yourName( fName, lName) {
 }
 
 yourName('Rock', 'Lee');
+
+let num1 = 1;
+let num2 = 2;
+let newNum = 5;
+
+function addTwoNumbers(one, two) {
+    let sum = one + two;
+    console.log(sum);
+}
+
+addTwoNumbers(num1, num2); //3
+addTwoNumbers(num1, newNum); //6
