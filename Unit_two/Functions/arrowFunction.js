@@ -124,7 +124,7 @@ console.log(tipCalculator(420, 10));
 let tipCalc = (subtotal, tipPer) => {
     let tip = (subtotal * tipPer) / 100;
     let total = subtotal + tip;
-    return total;
+    return total.toFixed(2);
 }
 
 console.log(tipCalc(25,13.5));
