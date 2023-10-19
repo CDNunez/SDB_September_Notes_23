@@ -158,7 +158,7 @@ character = "Splinter";
 tmnt.find((c, i) => console.log("Index: ", c == character, "index: ", i));
 
 //! .map()
-//cycle through an array of items and adjust for what is needed
+//cycle through an array of items and adjust for what is needed -- creates a new array with the results of calling a provided function on every element in the calling array
 
 
 let numberArray = [];
@@ -185,7 +185,7 @@ console.log(fizzBuzzArray);
 
 let arr = [1, 2, 3, 4, 5];
 
-console.log(typeof arr);
+//console.log(typeof arr);
 
 /*if( arr instanceof Array === true) {
     let revArr = arr.reverse();
@@ -194,8 +194,10 @@ console.log(typeof arr);
     console.log("not an array");
 }*/
 
-console.log(arr instanceof Array === true);
+//console.log(arr instanceof Array === true);
 
-let backwards = arr.reverse();
+//let backwards = arr.reverse();
 
-console.log(backwards);
+//console.log(backwards);
+
+(arr instanceof Array === true) ? console.log(arr.reverse()) : console.log('Not an array');
