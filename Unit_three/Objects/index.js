@@ -156,6 +156,7 @@ let hulu = {
     },
 }
 
-console.log(hulu.movies);
-console.log(hulu.shows.title);
-console.log(hulu.shows.seasons["season two"][1]["episode one"][1].title);
+console.log(hulu.movies);//movies array
+console.log(hulu.shows.title);//show title
+console.log(hulu.shows.seasons["season two"][1]["episode one"][1].title);//season two episode one
+
