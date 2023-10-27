@@ -41,6 +41,37 @@ console.log(honda);
 honda.turnOnEngine();
 honda.turnOffEngine();
 
+class Sedan extends Vehicle {
+    constructor(make,model,no_wheels,color,engine_on,tank) {
+        super(make,model,no_wheels,color, engine_on);
+        this.tank = tank;
+    }
+
+    parkedCar(){
+        this.engine_on = false;
+        console.log(`The ${this.make} is parked.`);
+    }
+
+    drive(gallons) {
+        if(this.engine_on == false) {
+            console.log(`The ${this.color} ${this.model} needs to be turned on.`);
+        } else {
+            console.log(`You drive around and use up ${gallons} gallons of gas.`);
+        };
+
+        if (this.engine_on == true && gallons <= this.tank) {
+            console.log(`You drive around and use up ${gallons} gallons of gas.`);
+        } else {
+            console.log(`There isn't enough gas in the ${this.make} to drive that many miles.`);
+        }
+    }
+}
+
+let mercedez = new Sedan('Mercedez', "GLA", 4, "Silver",14);
+//console.log(mercedez);
+mercedez.turnOnEngine();
+//mercedez.parkedCar();
+mercedez.drive(16);
 
 
 //*-------------breaking down practice-----------------
