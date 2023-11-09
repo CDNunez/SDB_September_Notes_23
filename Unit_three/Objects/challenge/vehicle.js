@@ -12,7 +12,7 @@
 */
 
 class Vehicle {
-    constructor(make, model, no_wheels, color, engine_on) {
+    constructor(make, model, no_wheels, color) {
         this.make = make;
         this.model = model;
         this.no_wheels = no_wheels;
@@ -23,13 +23,13 @@ class Vehicle {
     turnOnEngine() {
         console.log(`The ${this.color} ${this.make} ${this.model} turns on its engine.`);
         this.engine_on = true;
-        console.log(this.engine_on);
+        //console.log(this.engine_on);
     }
 
     turnOffEngine() {
         console.log(`The ${this.color} ${this.make} ${this.model} turns off its engine.`);
         this.engine_on = false;
-        console.log(this.engine_on);
+        //console.log(this.engine_on);
     }
 }
 
@@ -41,37 +41,43 @@ console.log(honda);
 honda.turnOnEngine();
 honda.turnOffEngine();
 
+console.log("----------------------------------------------------------");//divider
+
 class Sedan extends Vehicle {
-    constructor(make,model,no_wheels,color,engine_on,tank) {
-        super(make,model,no_wheels,color, engine_on);
-        this.tank = tank;
+    static parkedCar(make,model,no_wheels,color,tank) { //factory method to ensure the cars engine is always off when new object is created
+        let engine_on = false;
+        return new Sedan(
+            make,model,no_wheels,color,engine_on,tank
+        );
     }
 
-    parkedCar(){
-        this.engine_on = false;
-        console.log(`The ${this.make} is parked.`);
+    constructor(make,model,no_wheels,color,engine_on,tank) {
+        super(make,model,no_wheels,color,engine_on);
+        this.tank = tank = tank;
     }
 
     drive(gallons) {
-        if(this.engine_on == false) {
-            console.log(`The ${this.color} ${this.model} needs to be turned on.`);
-        } else {
-            console.log(`You drive around and use up ${gallons} gallons of gas.`);
-        };
+        if(this.engine_on) {
+            console.log(`The ${this.color} ${this.model} is turned on.`);
+                if (this.tank > gallons) {
 
-        if (this.engine_on == true && gallons <= this.tank) {
-            console.log(`You drive around and use up ${gallons} gallons of gas.`);
+                    console.log(`You drive around and use up ${gallons} gallons of gas.`); //if/else inside if/else
+                    this.tank -= gallons;
+                } else {
+                console.log(`There isn't enough gas in the ${this.make} to drive that many miles.`);
+            }
         } else {
-            console.log(`There isn't enough gas in the ${this.make} to drive that many miles.`);
-        }
+            console.log(`The ${this.color} ${this.model} needs to be turned on.`);
+        };
     }
 }
 
-let mercedez = new Sedan('Mercedez', "GLA", 4, "Silver",14);
-//console.log(mercedez);
-mercedez.turnOnEngine();
-//mercedez.parkedCar();
-mercedez.drive(16);
+const mercedes = Sedan.parkedCar('Mercedes', "GLA", 4, "Silver", 12);
+console.log(mercedes);
+mercedes.turnOnEngine();
+mercedes.drive(14);
+
+
 
 
 //*-------------breaking down practice-----------------
@@ -90,4 +96,4 @@ class ClassName {
 
 let classItem = new ClassName("parameter one", "parameter two", "parameter three");
 
-classItem.classMethod();
+//classItem.classMethod();
