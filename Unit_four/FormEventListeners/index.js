@@ -39,7 +39,7 @@ function displayTable() {
 
     while(table.firstChild) {//while the tbody contains a tr this loop will run
         table.removeChild(table.firstChild);
-    }
+    }//this loop will clear the visual output on the table in the browser while the animal array is still being updated by the function
 
     animals.forEach((animal, i) => {//loop through each object in the array including index
         // console.log('loop', i, animal);test
