@@ -42,7 +42,7 @@
 
     //?Async
 
-    const info = async(url, rng) => {
+    export const info = async(url, rng) => {
         try {
             const response = await fetch(disneyUrl);
             const data = await response.json();
@@ -61,3 +61,5 @@
     console.log(randomFifty);
     console.log(randomFifty);
     console.log(randomFifty);
+
+export default disneyUrl;
