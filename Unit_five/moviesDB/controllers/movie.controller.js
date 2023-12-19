@@ -109,9 +109,22 @@ router.get('/genre/:genre', async(req,res) => {
     }
 });
 //toDO PATCH/PUT One
-router.patch('/', async(req,res) => {
+//patch is for smoll put is for big
+//patch addresses specific item -- put addresses the whole document
+router.patch('/:id', async(req,res) => {
     try {
-        
+        //1) pull value from parameter
+        const { id } = req.params;
+        //2) pull data from the body
+        const info = req.body;
+        //3) use method to locate a document based off the ID and pass in new info
+        //* .findOneAndUpdate(query, document, options)
+        const returnOption = {new: true}; //option - returns the updated document
+        const updated = await Movie.findOneAndUpdate({_id: id}, info, returnOption);
+        //4) respond to client
+        res.status(200).json({
+            results:updated
+        });
     } catch (err) {
         errorResponse(res,err)
     }
