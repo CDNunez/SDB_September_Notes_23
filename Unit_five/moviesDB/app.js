@@ -8,8 +8,9 @@ const PORT = process.env.PORT;//points to our env file and puts the value of POR
 const MONGO = process.env.MONGODB; //conection variable from .env
 const userController = require('./controllers/user.controller');
 const movieController = require('./controllers/movie.controller');
+// const validateSession = require('./middleware/validate-session');
 
-mongoose.connect(`${MONGO}/movies`)
+mongoose.connect(`${MONGO}/movies`);
 // connection middleware. Establishes route and defines the connection we are targeting.
 //* doesn't display until there is a document within a collection
 
@@ -19,6 +20,7 @@ app.use(express.urlencoded());
 app.use(express.json());
 
 app.use('/user', userController);
+// app.use(validateSession); // all routes bellow require validation now
 app.use('/movies', movieController);
 
 app.listen(PORT, () => console.log(`Movies: ${PORT}`));
